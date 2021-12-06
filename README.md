@@ -1,4 +1,4 @@
-# steve-jewelery
+# VueNuxtJS
 
 ## Build Setup
 
