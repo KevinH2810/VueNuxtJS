@@ -3,14 +3,20 @@
     <button @click="onClickA">Button A</button>
     <button @click="onClickB">Button B</button>
   </div> -->
-  <div class="hero-image">
-    <div class="hero-text">
-      <h1>I am John Doe</h1>
-      <p>And I'm a Photographer</p>
-      <button @click="onClickA">Button A</button>
-      <button @click="onClickB">Button B</button>
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">Discover the World</h1>
+
+      <h2 class="hero-subtitle">Gue Abis Kawinan, Rasanya Uenak Tenan CUYY!</h2>
+
+      <button type="button" class="button-primary" @click="onClickA">
+        Button A
+      </button>
+      <button type="button" class="button-default" @click="onClickB">
+        Button B
+      </button>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -26,30 +32,87 @@ export default {
 };
 </script>
 
-<style>
-/* The hero image */
-.hero-image {
-  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("photographer.jpg"); */
-
-  /* Set a specific height */
-  height: 50%;
-
-  /* Position and center the image to scale nicely on all screens */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+<style lang="css">
+body {
+  margin: 0;
+  padding: 0;
 }
 
-/* Place text in the middle of the image */
-.hero-text {
-  text-align: center;
+.hero {
+  position: relative;
+  width: 100vw;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero::before {
+  content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /* color: white; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("~@/assets/background.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  filter: brightness(60%);
+}
+
+.hero-content {
+  position: relative;
+  font-family: "Monserrat", sans-serif;
+  color: white;
+  text-align: center;
+  margin: 0.625rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.hero-subtitle {
+  font-size: 2rem;
+  font-weight: 200;
+  margin-top: 1rem;
+}
+
+.button-primary {
+  background-color: #ae2d59;
+  color: white;
+  border: 1px solid #cb376a;
+  margin-top: 2rem;
+  padding: 0.9375rem 1.875rem;
+  font-family: "Monserrat", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 200;
+  cursor: pointer;
+}
+
+.button-primary:hover {
+  background-color: #cb376a;
+  border: 1px solid #db7598;
+}
+
+.button-default {
+  background-color: transparent;
+  color: white;
+  border: 1px solid #fff;
+  margin-top: 2rem;
+  padding: 0.9375rem 1.875rem;
+  font-family: "Monserrat", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 200;
+  cursor: pointer;
+}
+
+.button-default:hover {
+  color: #2c3e50;
+  background-color: #f8f9f9;
+  border: 1px solid #17202a;
 }
 </style>
