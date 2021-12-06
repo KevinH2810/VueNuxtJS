@@ -41,7 +41,7 @@ body {
 .hero {
   position: relative;
   width: 100vw;
-  height: 30vh;
+  height: 50vh;
   display: flex;
   justify-content: center;
   align-items: center;
